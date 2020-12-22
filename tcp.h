@@ -17,8 +17,8 @@ namespace DragonTCP
         boost::asio::ip::tcp::socket socket;
 
     public:
-        void sendMessage(const std::string& id, const std::string& data);
-        void getMessage(std::string &id, std::string &message, boost::system::error_code& error) const noexcept;
+        void sendMessage(const std::string& id, const std::string& message, boost::system::error_code& error);
+        void getMessage(std::string &id, std::string &message, boost::system::error_code& error);
 
     private:
         typedef unsigned long messageSizeType;
@@ -26,6 +26,9 @@ namespace DragonTCP
 
         template <typename fnctype>
         fnctype readToType(boost::system::error_code& error);
+
+        template <typename targetType, typename sourceType>
+        std::vector<targetType> convertToType(sourceType source);
     };
 
     class Client : public DragonTCP
