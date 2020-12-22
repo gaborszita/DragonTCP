@@ -9,30 +9,36 @@ int main()
     while (true) 
     {
         std::string input;
-        std::cout << "Enter message or command: ";
+        std::cout << "Enter command: ";
         std::cin >> input;
         if (input=="read") 
         {
-            client.read();
-            std::cout << "OK, read." << std::endl;
-        }
-        else if (input=="print") 
-        {
-            std::string data;
-            bool success = client.dataStream.getStringUntilDelimiter('\n', data);
-            if (success) 
+            boost::system::error_code error;
+            std::string id, message;
+            client.getMessage(id, message, error);
+            if (error)
             {
-                std::cout << "Message until \\n: " << data << std::endl;
+                std::cout << "Error!!!" << std::endl;
             }
-            else
+            std::cout << "id: " << id << " message: " << message << std::endl;
+        }
+        else if (input=="send") 
+        {
+            std::string id, message;
+            std::cout << "Enter id: ";
+            std::cin >> id;
+            std::cout << "Enter message: ";
+            std::cin >> message;
+            boost::system::error_code error;
+            client.sendMessage(id, message, error);
+            if (error)
             {
-                std::cout << "No message available for reading!" << std::endl;
+                std::cout << "Error!!!" << std::endl;
             }
         }
         else
         {
-            client.send(input);
-            std::cout << "OK, message sent." << std::endl;
+            std::cout << "Command uknown" << std::endl;
         }
     }
 }

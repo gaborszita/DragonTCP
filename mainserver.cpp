@@ -9,38 +9,36 @@ int main()
     while (true) 
     {
         std::string input;
-        std::cout << "Enter message or command: ";
+        std::cout << "Enter command: ";
         std::cin >> input;
         if (input=="read") 
         {
-            server.read();
-            std::cout << "OK, read." << std::endl;
-        }
-        else if (input=="print") 
-        {
-            //std::cout << server.dataStream.spaceUsed << std::endl;
-            std::string data;
-            //std::cout << server.dataStream.spaceUsed << std::endl;
-            bool success = server.dataStream.getStringUntilDelimiter('\n', data);
-            //std::cout << server.dataStream.spaceUsed << std::endl;
-            if (success) 
+            boost::system::error_code error;
+            std::string id, message;
+            server.getMessage(id, message, error);
+            if (error)
             {
-                std::cout << "Message until \\n: " << data << std::endl;
+                std::cout << "Error!!!" << std::endl;
             }
-            else
-            {
-                std::cout << "No message available for reading!" << std::endl;
-            }
+            std::cout << "id: " << id << " message: " << message << std::endl;
         }
-        else if (input=="clean") 
+        else if (input=="send") 
         {
-            server.dataStream.cleanup();
-            std::cout << "Clean successful!" << std::endl;
+            std::string id, message;
+            std::cout << "Enter id: ";
+            std::cin >> id;
+            std::cout << "Enter message: ";
+            std::cin >> message;
+            boost::system::error_code error;
+            server.sendMessage(id, message, error);
+            if (error)
+            {
+                std::cout << "Error!!!" << std::endl;
+            }
         }
         else
         {
-            server.send(input);
-            std::cout << "OK, message sent." << std::endl;
+            std::cout << "Command uknown" << std::endl;
         }
     }
 }
