@@ -13,13 +13,8 @@ int main()
         std::cin >> input;
         if (input=="read") 
         {
-            boost::system::error_code error;
             std::string id, message;
-            client.getMessage(id, message, error);
-            if (error)
-            {
-                std::cout << "Error!!!" << std::endl;
-            }
+            client.getMessage(id, message);
             std::cout << "id: " << id << " message: " << message << std::endl;
         }
         else if (input=="send") 
@@ -29,12 +24,7 @@ int main()
             std::cin >> id;
             std::cout << "Enter message: ";
             std::cin >> message;
-            boost::system::error_code error;
-            client.sendMessage(id, message, error);
-            if (error)
-            {
-                std::cout << "Error!!!" << std::endl;
-            }
+            client.sendMessage(id, message);
         }
         else
         {
