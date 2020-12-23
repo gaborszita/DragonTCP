@@ -1,3 +1,7 @@
+#pragma once
+#ifndef _DRAGONTCP_TCP_H
+#define _DRAGONTCP_TCP_H
+
 #include <boost/asio.hpp>
 #include <iostream>
 #include <string>
@@ -17,15 +21,20 @@ namespace DragonTCP
         boost::asio::ip::tcp::socket socket;
 
     public:
-        void sendMessage(const std::string& id, const std::string& message, boost::system::error_code& error);
-        void getMessage(std::string &id, std::string &message, boost::system::error_code& error);
+        void sendMessage(const std::string& id, const std::string& message, boost::system::error_code &error);
+        void sendMessage(const std::string& id, const std::string& message);
+        void getMessage(std::string &id, std::string &message, boost::system::error_code &error);
+        void getMessage(std::string &id, std::string &message);
 
     private:
         typedef unsigned long messageSizeType;
         typedef unsigned char idSizeType;
 
         template <typename fnctype>
-        fnctype readToType(boost::system::error_code& error);
+        fnctype readToType(boost::system::error_code &error);
+
+        template <typename fnctype>
+        fnctype readToType();
 
         template <typename targetType, typename sourceType>
         std::vector<targetType> convertToType(sourceType source);
@@ -34,14 +43,16 @@ namespace DragonTCP
     class Client : public DragonTCP
     {
     public:
-        void Connect(const std::string& ip);
+        void Connect(const std::string& ip, unsigned short port);
+        void Connect(const std::string& ip, unsigned short port, boost::system::error_code &error);
     };
 
     class Server : public DragonTCP
     {
     public:
-        void Connect();
+        void Connect(unsigned short port);
+        void Connect(unsigned short port, boost::system::error_code &error);
     };
 }
 
-
+#endif
