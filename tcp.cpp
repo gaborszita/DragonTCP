@@ -55,7 +55,6 @@ void DragonTCP::DragonTCP::sendMessage(const std::string& id, const std::string&
     std::string sendData;
     std::vector<char> idlen = convertToType<char>((idSizeType)id.length());
     std::vector<char> messagelen = convertToType<char>((messageSizeType)message.length());
-    std::cout << "message len: " << message.length() << std::endl;
     sendData.reserve(idlen.size() + messagelen.size() + id.length() + message.length());
     sendData.append(idlen.begin(), idlen.end());
     sendData.append(messagelen.begin(), messagelen.end());
@@ -69,7 +68,6 @@ void DragonTCP::DragonTCP::sendMessage(const std::string& id, const std::string&
     std::string sendData;
     std::vector<char> idlen = convertToType<char>((idSizeType)id.length());
     std::vector<char> messagelen = convertToType<char>((messageSizeType)message.length());
-    std::cout << "message len: " << message.length() << std::endl;
     sendData.reserve(idlen.size() + messagelen.size() + id.length() + message.length());
     sendData.append(idlen.begin(), idlen.end());
     sendData.append(messagelen.begin(), messagelen.end());
