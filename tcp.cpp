@@ -15,7 +15,6 @@ void DragonTCP::DragonTCP::getMessage(std::string &id, std::string &message, boo
 
     messageSizeType msgSize = readToType<messageSizeType>(error);
     if (error) { return; }
-    std::cout << "msgsize: " << msgSize << std::endl;
 
     asio::streambuf buf;
     asio::streambuf::mutable_buffers_type bufs = buf.prepare(sizeof(char) * idSize);
@@ -32,6 +31,25 @@ void DragonTCP::DragonTCP::getMessage(std::string &id, std::string &message, boo
     message = std::string(data);
 }
 
+void DragonTCP::DragonTCP::getMessage(std::string &id, std::string &message)
+{
+    idSizeType idSize = readToType<idSizeType>();
+
+    messageSizeType msgSize = readToType<messageSizeType>();
+
+    asio::streambuf buf;
+    asio::streambuf::mutable_buffers_type bufs = buf.prepare(sizeof(char) * idSize);
+    asio::read(socket, bufs, boost::asio::transfer_all());
+    const char* data = boost::asio::buffer_cast<const char *>(buf.data());
+    id = std::string(data);
+
+    asio::streambuf buf2;
+    bufs = buf2.prepare(sizeof(char) * msgSize); 
+    asio::read(socket, bufs, boost::asio::transfer_all());
+    data = asio::buffer_cast<const char *>(buf2.data());
+    message = std::string(data);
+}
+
 void DragonTCP::DragonTCP::sendMessage(const std::string& id, const std::string& message, boost::system::error_code &error)
 {
     std::string sendData;
@@ -43,7 +61,21 @@ void DragonTCP::DragonTCP::sendMessage(const std::string& id, const std::string&
     sendData.append(messagelen.begin(), messagelen.end());
     sendData.append(id);
     sendData.append(message);
-    asio::write( socket, boost::asio::buffer(sendData), error );
+    asio::write(socket, boost::asio::buffer(sendData), error);
+}
+
+void DragonTCP::DragonTCP::sendMessage(const std::string& id, const std::string& message)
+{
+    std::string sendData;
+    std::vector<char> idlen = convertToType<char>((idSizeType)id.length());
+    std::vector<char> messagelen = convertToType<char>((messageSizeType)message.length());
+    std::cout << "message len: " << message.length() << std::endl;
+    sendData.reserve(idlen.size() + messagelen.size() + id.length() + message.length());
+    sendData.append(idlen.begin(), idlen.end());
+    sendData.append(messagelen.begin(), messagelen.end());
+    sendData.append(id);
+    sendData.append(message);
+    asio::write(socket, boost::asio::buffer(sendData));
 }
 
 template <typename fnctype>
@@ -56,6 +88,22 @@ fnctype DragonTCP::DragonTCP::readToType(boost::system::error_code &error)
     {
         return 1;
     }
+    const unsigned char* data = boost::asio::buffer_cast<const unsigned char *>(buf.data());
+    fnctype output = 0;
+    for (long i=sizeof(fnctype)/sizeof(char)-1; i>=0; i--) 
+    {
+        output <<= sizeof(char)*8;
+        output |= data[i];
+    }
+    return output;
+}
+
+template <typename fnctype> 
+fnctype DragonTCP::DragonTCP::readToType()
+{
+    asio::streambuf buf;
+    asio::streambuf::mutable_buffers_type bufs = buf.prepare(sizeof(char) * (sizeof(fnctype)/sizeof(char)));
+    asio::read(socket, bufs, boost::asio::transfer_all());
     const unsigned char* data = boost::asio::buffer_cast<const unsigned char *>(buf.data());
     fnctype output = 0;
     for (long i=sizeof(fnctype)/sizeof(char)-1; i>=0; i--) 
@@ -80,20 +128,16 @@ std::vector<targetType> DragonTCP::DragonTCP::convertToType(sourceType source)
 }
 
 void DragonTCP::Client::Connect(const std::string& ip, unsigned short port)
+{  
+    //connection
+    socket.connect( asio::ip::tcp::endpoint( asio::ip::address::from_string(ip), port ));
+    return;
+}
+
+void DragonTCP::Client::Connect(const std::string& ip, unsigned short port, boost::system::error_code &error)
 {
-    // error variable
-    boost::system::error_code error;  
     //connection
     socket.connect( asio::ip::tcp::endpoint( asio::ip::address::from_string(ip), port ), error);
-    if (!error)
-    {
-        std::cout << "Connected." << std::endl;
-    }
-    else
-    {
-        std::cout << "Connection failed." << std::endl;
-        return;
-    }
     return;
 }
 
@@ -103,5 +147,14 @@ void DragonTCP::Server::Connect(unsigned short port)
     tcp::acceptor acceptor_(io_service, tcp::endpoint(tcp::v4(), port ));
     //waiting for connection
     acceptor_.accept(socket);
+    return;
+}
+
+void DragonTCP::Server::Connect(unsigned short port, boost::system::error_code &error)
+{
+    //listen for new connection
+    tcp::acceptor acceptor_(io_service, tcp::endpoint(tcp::v4(), port ), error);
+    //waiting for connection
+    acceptor_.accept(socket, error);
     return;
 }
