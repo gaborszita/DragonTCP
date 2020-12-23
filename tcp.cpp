@@ -1,7 +1,4 @@
 #include "tcp.h"
-#include <cstdio>
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/json_parser.hpp> 
 
 namespace asio = boost::asio;
 using asio::ip::tcp;
