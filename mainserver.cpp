@@ -5,7 +5,7 @@
 int main()
 {
     DragonTCP::Server server;
-    server.Connect();
+    server.Connect(9625);
     while (true) 
     {
         std::string input;

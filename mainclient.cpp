@@ -5,7 +5,7 @@
 int main()
 {
     DragonTCP::Client client;
-    client.Connect("127.0.0.1");
+    client.Connect("127.0.0.1", 9625);
     while (true) 
     {
         std::string input;
