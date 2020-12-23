@@ -1,3 +1,7 @@
+#pragma once
+#ifndef _DRAGONTCP_TCP_H
+#define _DRAGONTCP_TCP_H
+
 #include <boost/asio.hpp>
 #include <iostream>
 #include <string>
@@ -44,4 +48,4 @@ namespace DragonTCP
     };
 }
 
-
+#endif
