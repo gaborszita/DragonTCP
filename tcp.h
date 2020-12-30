@@ -87,15 +87,23 @@ namespace DragonTCP
         void disconnect(boost::system::error_code &error);
 
     private:
+        // These typedefs declare how big the id and the message of a data can be.
         typedef unsigned long messageSizeType;
         typedef unsigned char idSizeType;
 
+        /*
+        * The following 2 functions can be used to read some chars from the 
+        * socket to a specified type, passed by the function template fnctype. 
+        */
         template <typename fnctype>
         fnctype readToType(boost::system::error_code &error);
-
         template <typename fnctype>
         fnctype readToType();
 
+        /*
+        * The following 2 functions can be used to convert a targetType 
+        * variable to an array of sourceType variables. 
+        */
         template <typename targetType, typename sourceType>
         std::vector<targetType> convertToType(sourceType source);
     };
