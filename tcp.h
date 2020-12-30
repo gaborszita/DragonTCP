@@ -43,6 +43,11 @@ namespace DragonTCP
     * IMPORTANT NOTE: DragonTCP is a speed and not user-friendly or 
     * readability optimized library. Please note this before starting to use 
     * this library. 
+    *  
+    * DragonTCP currently is NOT thread-safe. The reason for this is because 
+    * working with mutexes to ensure thread-safety also requires some time, 
+    * thus slowing down the program. By handing over the responsibility of 
+    * thread-safety to the programmer, we can speed up the program.
     */
     class DragonTCP
     {
