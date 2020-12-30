@@ -43,6 +43,12 @@ int main()
             std::cin >> message;
             client.sendMessage(id, message);
         }
+        else if (input=="disconnect")
+        {
+            client.disconnect();
+            std::cout << "Disconnect successful!" << std::endl;
+            std::exit(0);
+        }
         else
         {
             std::cout << "Command uknown" << std::endl;

@@ -43,6 +43,8 @@ namespace DragonTCP
         void sendMessage(const std::string& id, const std::string& message);
         void getMessage(std::string &id, std::string &message, boost::system::error_code &error);
         void getMessage(std::string &id, std::string &message);
+        void disconnect();
+        void disconnect(boost::system::error_code &error);
 
     private:
         typedef unsigned long messageSizeType;

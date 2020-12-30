@@ -171,3 +171,13 @@ void DragonTCP::Server::Connect(unsigned short port, boost::system::error_code &
     acceptor_.accept(socket, error);
     return;
 }
+
+void DragonTCP::DragonTCP::disconnect()
+{
+    socket.close();
+}
+
+void DragonTCP::DragonTCP::disconnect(boost::system::error_code &error)
+{
+    socket.close();
+}
