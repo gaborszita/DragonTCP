@@ -180,14 +180,14 @@ namespace DragonTCP
     {
     public:
         /**
-         * Connect to the server. In case of an error, an exception will be 
-         * thrown.
+         * \brief Connect to the server. In case of an error, an exception will be 
+         *        thrown.
          */
         void Connect(const std::string& ip, unsigned short port);
 
         /**
-         * Connect to the server. In case of an error, the error argument will 
-         * be set.
+         * \brief Connect to the server. In case of an error, the error argument will 
+         *        be set.
          */
         void Connect(const std::string& ip, unsigned short port, boost::system::error_code &error);
     };
