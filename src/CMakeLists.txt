@@ -8,4 +8,8 @@ target_include_directories(DragonTCP
     ${PROJECT_SOURCE_DIR}/include
 )
 
-install(TARGETS DragonTCP DESTINATION lib/DragonTCP)
+target_link_libraries(DragonTCP
+    PRIVATE pthread boost_system
+)
+
+install(TARGETS DragonTCP DESTINATION lib)
