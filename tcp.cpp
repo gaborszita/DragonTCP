@@ -166,7 +166,7 @@ void DragonTCP::Server::Connect(unsigned short port)
 void DragonTCP::Server::Connect(unsigned short port, boost::system::error_code &error)
 {
     //listen for new connection
-    tcp::acceptor acceptor_(io_service, tcp::endpoint(tcp::v4(), port ), error);
+    tcp::acceptor acceptor_(io_service, tcp::endpoint(tcp::v4(), port ));
     //waiting for connection
     acceptor_.accept(socket, error);
     return;
@@ -179,5 +179,5 @@ void DragonTCP::DragonTCP::disconnect()
 
 void DragonTCP::DragonTCP::disconnect(boost::system::error_code &error)
 {
-    socket.close();
+    socket.close(error);
 }
