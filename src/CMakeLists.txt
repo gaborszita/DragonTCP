@@ -9,7 +9,8 @@ target_include_directories(DragonTCP
 )
 
 target_link_libraries(DragonTCP
-    PRIVATE pthread boost_system
+    PRIVATE boost_system
+    PUBLIC pthread
 )
 
 install(TARGETS DragonTCP DESTINATION lib)
