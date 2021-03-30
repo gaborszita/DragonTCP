@@ -191,6 +191,11 @@ namespace DragonTCP
          */
         void Connect(const std::string& ip, unsigned short port, boost::system::error_code &error);
     };
+    /**
+     * \example mainclient.cpp
+     * This is an example of how to use the Client class.
+     */
+
 
     /*
      * Server class of the DragonTCP library. This class should be used when 
@@ -215,6 +220,11 @@ namespace DragonTCP
          */
         void Connect(unsigned short port, boost::system::error_code &error);
     };
+    /**
+     * \example mainserver.cpp
+     * This is an example of how to use the Server class.
+     */
 }
+
 
 #endif
