@@ -17,7 +17,7 @@
 */ 
 
 #include <iostream>
-#include "tcp.h"
+#include "DragonTCP.h"
 
 int main()
 {
