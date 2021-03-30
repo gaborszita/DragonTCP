@@ -4,8 +4,7 @@ tcp.cpp
 )
 
 target_include_directories(DragonTCP
-    PUBLIC
-    ${PROJECT_SOURCE_DIR}/include
+    PUBLIC ${PROJECT_SOURCE_DIR}/include
 )
 
 target_link_libraries(DragonTCP
