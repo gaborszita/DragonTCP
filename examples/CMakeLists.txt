@@ -9,11 +9,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(Server mainserver.cpp)
 
 target_link_libraries(Server
-    PRIVATE DragonTCP
+    PRIVATE DragonTCP pthread
 )
 
 add_executable(Client mainserver.cpp)
 
 target_link_libraries(Client
-    PRIVATE DragonTCP
+    PRIVATE DragonTCP pthread
 )
