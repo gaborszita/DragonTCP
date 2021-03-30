@@ -12,7 +12,7 @@ target_link_libraries(Server
     PRIVATE DragonTCP pthread
 )
 
-add_executable(Client mainserver.cpp)
+add_executable(Client mainclient.cpp)
 
 target_link_libraries(Client
     PRIVATE DragonTCP pthread
