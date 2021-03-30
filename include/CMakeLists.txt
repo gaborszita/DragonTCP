@@ -1,1 +1,1 @@
-install(FILES DragonTCP.h DESTINATION include)
+install(FILES DragonTCP.hpp DESTINATION include/DragonTCP)

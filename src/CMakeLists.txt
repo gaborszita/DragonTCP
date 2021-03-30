@@ -8,4 +8,4 @@ target_include_directories(DragonTCP
     ${PROJECT_SOURCE_DIR}/include
 )
 
-install(TARGETS DragonTCP DESTINATION lib)
+install(TARGETS DragonTCP DESTINATION lib/DragonTCP)
