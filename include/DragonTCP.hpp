@@ -50,12 +50,17 @@
 namespace DragonTCP
 {
     /**
-     * Main class for the library.
+     * \brief Main class for the library.
+     * 
+     * This class is an abstract class and cannot be instantiated, since it 
+     * isn't a server nor a client. It is the parent of the Client and Server 
+     * classes.
      */ 
     class DragonTCP
     {
     protected:
-        /// default constructor of DragonTCP class
+        /// default constructor of DragonTCP class - declared as protected, so 
+        /// the class cannot be instantiated
         DragonTCP(); 
     public:
         /// delete copy constructor

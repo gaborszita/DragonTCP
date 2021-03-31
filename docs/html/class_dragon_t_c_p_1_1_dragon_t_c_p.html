@@ -77,13 +77,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Main class for the library.  
+ <a href="class_dragon_t_c_p_1_1_dragon_t_c_p.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_dragon_t_c_p_8hpp_source.html">DragonTCP.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for DragonTCP::DragonTCP:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_dragon_t_c_p_1_1_dragon_t_c_p__inherit__graph.png" border="0" usemap="#_dragon_t_c_p_1_1_dragon_t_c_p_inherit__map" alt="Inheritance graph"/></div>
 <map name="_dragon_t_c_p_1_1_dragon_t_c_p_inherit__map" id="_dragon_t_c_p_1_1_dragon_t_c_p_inherit__map">
-<area shape="rect" title=" " alt="" coords="68,5,236,32"/>
+<area shape="rect" title="Main class for the library." alt="" coords="68,5,236,32"/>
 <area shape="rect" href="class_dragon_t_c_p_1_1_client.html" title=" " alt="" coords="5,80,139,107"/>
 <area shape="rect" href="class_dragon_t_c_p_1_1_server.html" title=" " alt="" coords="163,80,301,107"/>
 </map>
@@ -122,9 +125,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a04744809fbbf197441815b9c44053685"><td class="memItemLeft" align="right" valign="top"><a id="a04744809fbbf197441815b9c44053685"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html#a04744809fbbf197441815b9c44053685">DragonTCP</a> ()</td></tr>
-<tr class="memdesc:a04744809fbbf197441815b9c44053685"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor of <a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html">DragonTCP</a> class <br /></td></tr>
+<tr class="memitem:a04744809fbbf197441815b9c44053685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html#a04744809fbbf197441815b9c44053685">DragonTCP</a> ()</td></tr>
 <tr class="separator:a04744809fbbf197441815b9c44053685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -140,7 +141,35 @@ boost::asio::ip::tcp::socket&#160;</td><td class="memItemRight" valign="bottom">
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main class for the library. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p>This class is an abstract class and cannot be instantiated, since it isn't a server nor a client. It is the parent of the <a class="el" href="class_dragon_t_c_p_1_1_client.html">Client</a> and <a class="el" href="class_dragon_t_c_p_1_1_server.html">Server</a> classes. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a04744809fbbf197441815b9c44053685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04744809fbbf197441815b9c44053685">&#9670;&nbsp;</a></span>DragonTCP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DragonTCP::DragonTCP::DragonTCP </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>default constructor of <a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html" title="Main class for the library.">DragonTCP</a> class - declared as protected, so the class cannot be instantiated </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a600cfb45c3b529070998d375a93ac4da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a600cfb45c3b529070998d375a93ac4da">&#9670;&nbsp;</a></span>getMessage() <span class="overload">[1/2]</span></h2>
 
@@ -244,7 +273,7 @@ boost::asio::ip::tcp::socket&#160;</td><td class="memItemRight" valign="bottom">
 </div><div class="memdoc">
 
 <p>Send data with an id and a message. In case of an error, an exception will be thrown. </p>
-<p>IMPORTANT: The id cannot be longer than 256 bytes and the message cannot be longer than 4,294,967,295 bytes. <a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html">DragonTCP</a> doesn't check this, because it is optimized for speed. Therefore, it is the programmer's responsibility to ensure the arguments don't pass these limits. If it is not checked, undefined behavior could happen. </p>
+<p>IMPORTANT: The id cannot be longer than 256 bytes and the message cannot be longer than 4,294,967,295 bytes. <a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html" title="Main class for the library.">DragonTCP</a> doesn't check this, because it is optimized for speed. Therefore, it is the programmer's responsibility to ensure the arguments don't pass these limits. If it is not checked, undefined behavior could happen. </p>
 
 </div>
 </div>
@@ -281,7 +310,7 @@ boost::asio::ip::tcp::socket&#160;</td><td class="memItemRight" valign="bottom">
 </div><div class="memdoc">
 
 <p>Send data with an id and a message. In case of an error, the error argument will be set. </p>
-<p>IMPORTANT: The id cannot be longer than 256 bytes and the message cannot be longer than 4,294,967,295 bytes. <a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html">DragonTCP</a> doesn't check this, because it is optimized for speed. Therefore, it is the programmer's responsibility to ensure the arguments don't pass these limits. If it is not checked, undefined behavior could happen. </p>
+<p>IMPORTANT: The id cannot be longer than 256 bytes and the message cannot be longer than 4,294,967,295 bytes. <a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html" title="Main class for the library.">DragonTCP</a> doesn't check this, because it is optimized for speed. Therefore, it is the programmer's responsibility to ensure the arguments don't pass these limits. If it is not checked, undefined behavior could happen. </p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mainclient_8cpp-example.html#a3">mainclient.cpp</a>, and <a class="el" href="mainserver_8cpp-example.html#a3">mainserver.cpp</a>.</dd>
 </dl>
 
