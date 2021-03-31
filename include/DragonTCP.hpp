@@ -59,8 +59,8 @@ namespace DragonTCP
     class DragonTCP
     {
     protected:
-        /// default constructor of DragonTCP class - declared as protected, so 
-        /// the class cannot be instantiated
+        /// \brief default constructor of DragonTCP class - declared as 
+        ///        protected, so the class cannot be instantiated
         DragonTCP(); 
     public:
         /// delete copy constructor
@@ -148,7 +148,7 @@ namespace DragonTCP
         
 
     private:
-        // Set how big the message of the data can be.
+        /// Set how big the message of the data can be.
         typedef unsigned long messageSizeType;
 
         /// Set how big the id of the data can be.
