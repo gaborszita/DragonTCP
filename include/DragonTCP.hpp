@@ -54,9 +54,10 @@ namespace DragonTCP
      */ 
     class DragonTCP
     {
-    public:
+    protected:
         /// default constructor of DragonTCP class
         DragonTCP(); 
+    public:
         /// delete copy constructor
         DragonTCP(const DragonTCP&)= delete;
         /// delete move constructor
