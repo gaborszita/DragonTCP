@@ -78,7 +78,7 @@ compiler:
 
 ### Documentation
 
-Detailed documentation is at [docs/html/index.html](https://github.com/gaborszita/DragonTCP/docs/html/index.html).
+Detailed documentation is at [https://gaborszita.github.io/DragonTCP/](https://gaborszita.github.io/DragonTCP/).
 
 ## Troubleshooting
 
