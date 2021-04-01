@@ -17,8 +17,8 @@
  */ 
 
 #pragma once
-#ifndef _DRAGONTCP_TCP_H
-#define _DRAGONTCP_TCP_H
+#ifndef DRAGONTCP_H
+#define DRAGONTCP_H
 
 #include <boost/asio.hpp>
 #include <iostream>
@@ -233,4 +233,4 @@ namespace DragonTCP
 }
 
 
-#endif
+#endif // DRAGONTCP_H
