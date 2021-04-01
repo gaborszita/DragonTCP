@@ -1,6 +1,6 @@
 add_library(DragonTCP
 SHARED
-tcp.cpp
+DragonTCP.cpp
 )
 
 target_include_directories(DragonTCP
