@@ -175,7 +175,7 @@ namespace DragonTCP
         * variables.
         */
         template <typename targetType, typename sourceType>
-        std::vector<targetType> convertToType(sourceType source);
+        static std::vector<targetType> convertToType(sourceType source);
     };
 
     /*
