@@ -189,13 +189,13 @@ namespace DragonTCP
          * \brief Connect to the server. In case of an error, an exception will be 
          *        thrown.
          */
-        void Connect(const std::string& ip, unsigned short port);
+        void connect(const std::string& ip, unsigned short port);
 
         /**
          * \brief Connect to the server. In case of an error, the error argument will 
          *        be set.
          */
-        void Connect(const std::string& ip, unsigned short port, boost::system::error_code &error);
+        void connect(const std::string& ip, unsigned short port, boost::system::error_code &error);
     };
     /**
      * \example mainclient.cpp
@@ -216,7 +216,7 @@ namespace DragonTCP
          * 
          * The method blocks until a client connects.
          */
-        void Connect(unsigned short port);
+        void connect(unsigned short port);
 
         /**
          * \brief Wait for a client to connect. In case of an error, the error 
@@ -224,7 +224,7 @@ namespace DragonTCP
          * 
          * The method blocks until a client connects.
          */
-        void Connect(unsigned short port, boost::system::error_code &error);
+        void connect(unsigned short port, boost::system::error_code &error);
     };
     /**
      * \example mainserver.cpp

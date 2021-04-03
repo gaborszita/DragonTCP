@@ -140,21 +140,21 @@ std::vector<targetType> DragonTCP::DragonTCP::convertToType(sourceType source)
     return target;
 }
 
-void DragonTCP::Client::Connect(const std::string& ip, unsigned short port)
+void DragonTCP::Client::connect(const std::string& ip, unsigned short port)
 {  
     //connection
     socket.connect( asio::ip::tcp::endpoint( asio::ip::address::from_string(ip), port ));
     return;
 }
 
-void DragonTCP::Client::Connect(const std::string& ip, unsigned short port, boost::system::error_code &error)
+void DragonTCP::Client::connect(const std::string& ip, unsigned short port, boost::system::error_code &error)
 {
     //connection
     socket.connect( asio::ip::tcp::endpoint( asio::ip::address::from_string(ip), port ), error);
     return;
 }
 
-void DragonTCP::Server::Connect(unsigned short port)
+void DragonTCP::Server::connect(unsigned short port)
 {
     //listen for new connection
     tcp::acceptor acceptor_(io_service, tcp::endpoint(tcp::v4(), port ));
@@ -163,7 +163,7 @@ void DragonTCP::Server::Connect(unsigned short port)
     return;
 }
 
-void DragonTCP::Server::Connect(unsigned short port, boost::system::error_code &error)
+void DragonTCP::Server::connect(unsigned short port, boost::system::error_code &error)
 {
     //listen for new connection
     tcp::acceptor acceptor_(io_service, tcp::endpoint(tcp::v4(), port ));

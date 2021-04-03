@@ -75,7 +75,7 @@ $(function() {
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
 <div class="line">    <a name="_a0"></a><a class="code" href="class_dragon_t_c_p_1_1_server.html">DragonTCP::Server</a> server;</div>
-<div class="line">    server.<a name="a1"></a><a class="code" href="class_dragon_t_c_p_1_1_server.html#a0d7cdd947278bd79db58bf8fcb22b68b">Connect</a>(9625);</div>
+<div class="line">    server.<a name="a1"></a><a class="code" href="class_dragon_t_c_p_1_1_server.html#a81ffa0e41b65f169ac4c85b351524d8e">connect</a>(9625);</div>
 <div class="line">    <span class="keywordflow">while</span> (<span class="keyword">true</span>) </div>
 <div class="line">    {</div>
 <div class="line">        std::string input;</div>
@@ -110,8 +110,8 @@ $(function() {
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <div class="ttc" id="aclass_dragon_t_c_p_1_1_server_html"><div class="ttname"><a href="class_dragon_t_c_p_1_1_server.html">DragonTCP::Server</a></div><div class="ttdef"><b>Definition:</b> DragonTCP.hpp:211</div></div>
+<div class="ttc" id="aclass_dragon_t_c_p_1_1_server_html_a81ffa0e41b65f169ac4c85b351524d8e"><div class="ttname"><a href="class_dragon_t_c_p_1_1_server.html#a81ffa0e41b65f169ac4c85b351524d8e">DragonTCP::Server::connect</a></div><div class="ttdeci">void connect(unsigned short port)</div><div class="ttdoc">Wait for a client to connect. In case of an error, an exception will be thrown.</div></div>
 <div class="ttc" id="aclass_dragon_t_c_p_1_1_dragon_t_c_p_html_a397145af49c474cabc44b372b67c3ac1"><div class="ttname"><a href="class_dragon_t_c_p_1_1_dragon_t_c_p.html#a397145af49c474cabc44b372b67c3ac1">DragonTCP::DragonTCP::disconnect</a></div><div class="ttdeci">void disconnect(boost::system::error_code &amp;error)</div><div class="ttdoc">Disconnect from the socket. In case of an error, the error argument will be set.</div></div>
-<div class="ttc" id="aclass_dragon_t_c_p_1_1_server_html_a0d7cdd947278bd79db58bf8fcb22b68b"><div class="ttname"><a href="class_dragon_t_c_p_1_1_server.html#a0d7cdd947278bd79db58bf8fcb22b68b">DragonTCP::Server::Connect</a></div><div class="ttdeci">void Connect(unsigned short port)</div><div class="ttdoc">Wait for a client to connect. In case of an error, an exception will be thrown.</div></div>
 <div class="ttc" id="aclass_dragon_t_c_p_1_1_dragon_t_c_p_html_a9f72450f1daad00001ab95b67c9a67ca"><div class="ttname"><a href="class_dragon_t_c_p_1_1_dragon_t_c_p.html#a9f72450f1daad00001ab95b67c9a67ca">DragonTCP::DragonTCP::getMessage</a></div><div class="ttdeci">void getMessage(std::string &amp;id, std::string &amp;message, boost::system::error_code &amp;error)</div><div class="ttdoc">Receive data. When the function returns, the variables passed as the id and message arguments will co...</div></div>
 <div class="ttc" id="aclass_dragon_t_c_p_1_1_dragon_t_c_p_html_a36b335ff13e552236f61cb6c8d8f36b6"><div class="ttname"><a href="class_dragon_t_c_p_1_1_dragon_t_c_p.html#a36b335ff13e552236f61cb6c8d8f36b6">DragonTCP::DragonTCP::sendMessage</a></div><div class="ttdeci">void sendMessage(const std::string &amp;id, const std::string &amp;message, boost::system::error_code &amp;error)</div><div class="ttdoc">Send data with an id and a message. In case of an error, the error argument will be set.</div></div>
 <!-- start footer part -->

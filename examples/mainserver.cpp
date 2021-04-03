@@ -22,7 +22,7 @@
 int main()
 {
     DragonTCP::Server server;
-    server.Connect(9625);
+    server.connect(9625);
     while (true) 
     {
         std::string input;

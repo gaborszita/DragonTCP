@@ -95,12 +95,12 @@ Collaboration diagram for DragonTCP::Server:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d7cdd947278bd79db58bf8fcb22b68b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_t_c_p_1_1_server.html#a0d7cdd947278bd79db58bf8fcb22b68b">Connect</a> (unsigned short port)</td></tr>
-<tr class="memdesc:a0d7cdd947278bd79db58bf8fcb22b68b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a client to connect. In case of an error, an exception will be thrown.  <a href="class_dragon_t_c_p_1_1_server.html#a0d7cdd947278bd79db58bf8fcb22b68b">More...</a><br /></td></tr>
-<tr class="separator:a0d7cdd947278bd79db58bf8fcb22b68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a500adbc74c621a0de7615a7e980bfcee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_t_c_p_1_1_server.html#a500adbc74c621a0de7615a7e980bfcee">Connect</a> (unsigned short port, boost::system::error_code &amp;error)</td></tr>
-<tr class="memdesc:a500adbc74c621a0de7615a7e980bfcee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a client to connect. In case of an error, the error argument will be set.  <a href="class_dragon_t_c_p_1_1_server.html#a500adbc74c621a0de7615a7e980bfcee">More...</a><br /></td></tr>
-<tr class="separator:a500adbc74c621a0de7615a7e980bfcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ffa0e41b65f169ac4c85b351524d8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_t_c_p_1_1_server.html#a81ffa0e41b65f169ac4c85b351524d8e">connect</a> (unsigned short port)</td></tr>
+<tr class="memdesc:a81ffa0e41b65f169ac4c85b351524d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a client to connect. In case of an error, an exception will be thrown.  <a href="class_dragon_t_c_p_1_1_server.html#a81ffa0e41b65f169ac4c85b351524d8e">More...</a><br /></td></tr>
+<tr class="separator:a81ffa0e41b65f169ac4c85b351524d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f49f4a4817e90188a8bf2a6e4cda173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_t_c_p_1_1_server.html#a7f49f4a4817e90188a8bf2a6e4cda173">connect</a> (unsigned short port, boost::system::error_code &amp;error)</td></tr>
+<tr class="memdesc:a7f49f4a4817e90188a8bf2a6e4cda173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a client to connect. In case of an error, the error argument will be set.  <a href="class_dragon_t_c_p_1_1_server.html#a7f49f4a4817e90188a8bf2a6e4cda173">More...</a><br /></td></tr>
+<tr class="separator:a7f49f4a4817e90188a8bf2a6e4cda173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_dragon_t_c_p_1_1_dragon_t_c_p"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_dragon_t_c_p_1_1_dragon_t_c_p')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html">DragonTCP::DragonTCP</a></td></tr>
 <tr class="memitem:ad2ebe85152d1d19bcc3452abde171e18 inherit pub_methods_class_dragon_t_c_p_1_1_dragon_t_c_p"><td class="memItemLeft" align="right" valign="top"><a id="ad2ebe85152d1d19bcc3452abde171e18"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html#ad2ebe85152d1d19bcc3452abde171e18">DragonTCP</a> (const <a class="el" href="class_dragon_t_c_p_1_1_dragon_t_c_p.html">DragonTCP</a> &amp;)=delete</td></tr>
@@ -152,14 +152,14 @@ boost::asio::ip::tcp::socket&#160;</td><td class="memItemRight" valign="bottom">
 <div class="textblock"><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mainserver_8cpp-example.html#_a0">mainserver.cpp</a>.</dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0d7cdd947278bd79db58bf8fcb22b68b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d7cdd947278bd79db58bf8fcb22b68b">&#9670;&nbsp;</a></span>Connect() <span class="overload">[1/2]</span></h2>
+<a id="a81ffa0e41b65f169ac4c85b351524d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81ffa0e41b65f169ac4c85b351524d8e">&#9670;&nbsp;</a></span>connect() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DragonTCP::Server::Connect </td>
+          <td class="memname">void DragonTCP::Server::connect </td>
           <td>(</td>
           <td class="paramtype">unsigned short&#160;</td>
           <td class="paramname"><em>port</em></td><td>)</td>
@@ -175,14 +175,14 @@ boost::asio::ip::tcp::socket&#160;</td><td class="memItemRight" valign="bottom">
 
 </div>
 </div>
-<a id="a500adbc74c621a0de7615a7e980bfcee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a500adbc74c621a0de7615a7e980bfcee">&#9670;&nbsp;</a></span>Connect() <span class="overload">[2/2]</span></h2>
+<a id="a7f49f4a4817e90188a8bf2a6e4cda173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f49f4a4817e90188a8bf2a6e4cda173">&#9670;&nbsp;</a></span>connect() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DragonTCP::Server::Connect </td>
+          <td class="memname">void DragonTCP::Server::connect </td>
           <td>(</td>
           <td class="paramtype">unsigned short&#160;</td>
           <td class="paramname"><em>port</em>, </td>
