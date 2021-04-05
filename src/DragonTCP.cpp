@@ -174,10 +174,13 @@ void DragonTCP::Server::connect(unsigned short port, boost::system::error_code &
 
 void DragonTCP::DragonTCP::disconnect()
 {
+    socket.shutdown(boost::asio::ip::tcp::socket::shutdown_both);
     socket.close();
 }
 
 void DragonTCP::DragonTCP::disconnect(boost::system::error_code &error)
 {
+    socket.shutdown(boost::asio::ip::tcp::socket::shutdown_both, error);
+    if (error) { return; }
     socket.close(error);
 }
