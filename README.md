@@ -25,6 +25,8 @@ possible with data with many different purposes on the same socket.
 
 First, make sure cmake, a make utility (e.g. GNU make, BSD make), boost libraries, and git is installed.
 
+If you're using Cygwin, omit ```sudo``` in commands that  use it.
+
 Enter these commands in the terminal:
 
 ```
