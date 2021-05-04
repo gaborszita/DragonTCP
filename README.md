@@ -21,9 +21,9 @@ possible with data with many different purposes on the same socket.
 
 ## Getting started
 
-### Installation
+### Installation - Linux/Unix/Cygwin
 
-First, make sure cmake, GNU make, and git is installed.
+First, make sure cmake, a make utility (e.g. GNU make, BSD make), boost libraries, and git is installed.
 
 Enter these commands in the terminal:
 
@@ -84,3 +84,10 @@ Detailed documentation is at [https://gaborszita.github.io/DragonTCP/](https://g
 
 - Check if your firewall is blocking network connections from your executables
 - Check if the port you're using isn't already in use
+
+### Uninstallation
+
+If you'd like to uninstall DragonTCP, go to the directory where you built it, 
+(if you followed this tutorial, it is build) and enter this command:
+
+```xargs rm < install_manifest.txt```

@@ -77,8 +77,8 @@ What makes DragonTCP different from other TCP communication libraries?</h2>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Getting started</h1>
 <h2><a class="anchor" id="autotoc_md4"></a>
-Installation</h2>
-<p>First, make sure cmake, GNU make, and git is installed.</p>
+Installation - Linux/Unix/Cygwin</h2>
+<p>First, make sure cmake, a make utility (e.g. GNU make, BSD make), boost libraries, and git is installed.</p>
 <p>Enter these commands in the terminal:</p>
 <div class="fragment"><div class="line">git clone https://github.com/gaborszita/DragonTCP</div>
 <div class="line">cd DragonTCP</div>
@@ -106,17 +106,24 @@ Examples</h2>
 Writing your own program</h2>
 <p>When you write you're own program that uses <a class="el" href="namespace_dragon_t_c_p.html" title="DragonTCP namespace.">DragonTCP</a> include the DragonTCP/DragonTCP.hpp header file. This includes all the classes that you need to use <a class="el" href="namespace_dragon_t_c_p.html" title="DragonTCP namespace.">DragonTCP</a>. When linking your program link the <a class="el" href="namespace_dragon_t_c_p.html" title="DragonTCP namespace.">DragonTCP</a> and pthread libraries.</p>
 <p>For example, here's how to link the mainclient.cpp file using the GNU C++ compiler:</p>
-<p><code>g++ -std=c++11 -o mainclient mainclient.cpp -lDragonTCP -lpthread</code></p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Documentation</h2>
-<p>Detailed documentation is at <a href="https://gaborszita.github.io/DragonTCP/">https://gaborszita.github.io/DragonTCP/</a>.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-Troubleshooting</h1>
-<ul>
-<li>Check if your firewall is blocking network connections from your executables</li>
-<li>Check if the port you're using isn't already in use </li>
-</ul>
-</div></div><!-- PageDoc -->
+<div class="fragment"><div class="line"> {g++}</div>
+<div class="line"> </div>
+<div class="line">### Documentation</div>
+<div class="line"> </div>
+<div class="line">Detailed documentation is at [https://gaborszita.github.io/DragonTCP/](https://gaborszita.github.io/DragonTCP/).</div>
+<div class="line"> </div>
+<div class="line">## Troubleshooting</div>
+<div class="line"> </div>
+<div class="line">- Check if your firewall is blocking network connections from your executables</div>
+<div class="line">- Check if the port you&#39;re using isn&#39;t already in use</div>
+<div class="line"> </div>
+<div class="line">### Uninstallation</div>
+<div class="line"> </div>
+<div class="line">If you&#39;d like to uninstall DragonTCP, go to the directory where you built it, </div>
+<div class="line">(if you followed this tutorial, it is build) and enter this command:</div>
+<div class="line"> </div>
+<div class="line">```xargs rm &lt; install_manifest.tx</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
