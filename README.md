@@ -87,7 +87,7 @@ Detailed documentation is at [https://gaborszita.github.io/DragonTCP/](https://g
 
 ### Uninstallation
 
-If you'd like to uninstall DragonTCP, go to the directory where you built it, 
-(if you followed this tutorial, it is build) and enter this command:
+If you'd like to uninstall DragonTCP, go to the directory where you built it 
+(if you followed this tutorial, it is build), and enter this command:
 
 ```xargs rm < install_manifest.txt```
