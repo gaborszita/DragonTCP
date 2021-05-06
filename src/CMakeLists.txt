@@ -1,5 +1,4 @@
 add_library(DragonTCP
-SHARED
 DragonTCP.cpp
 )
 

@@ -7,6 +7,7 @@ project(DragonTCP VERSION ${DragonTCP_VERSION} LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+set(BUILD_SHARED_LIBS YES CACHE BOOL "Specifies whether to build shared or static libraries")
 add_subdirectory(src)
 add_subdirectory(include)
 
